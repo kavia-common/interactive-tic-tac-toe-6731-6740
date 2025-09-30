@@ -1,0 +1,110 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9fafb;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, rgba(37, 99, 235, 0.1), rgba(249, 250, 251, 1));
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cell.x {
+  color: #2563EB;
+}
+
+.cell.o {
+  color: #F59E0B;
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.winMessage {
+  color: #2563EB;
+  font-weight: bold;
+}
+
+.drawMessage {
+  color: #F59E0B;
+}
+
+.errorMessage {
+  color: #EF4444;
+}
+
+@media (max-width: 480px) {
+  .board {
+    max-width: 300px;
+  }
+
+  .cell {
+    font-size: 2rem;
+  }
+
+  .status {
+    font-size: 1.25rem;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
